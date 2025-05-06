@@ -250,11 +250,11 @@ function ProductList({ onHomeClick }) {
         setShowPlants(true); // Set showAboutUs to true when "About Us" link is clicked
         setShowCart(false); // Hide the cart when navigating to About Us
     };
-    const handleAddToCart = (plant) => {
-        dispatch(addItem(plant)); // Dispatch the action to add the product to the cart (Redux action)
+    const handleAddToCart = (product) => {
+        dispatch(addItem(product)); // Dispatch the action to add the product to the cart (Redux action)
         setAddedToCart((prevState) => ({ // Update the local state to reflect that the product has been added
           ...prevState, // Spread the previous state to retain existing entries
-          [plant.name]: true, // Set the current product's name as a key with value 'true' to mark it as added
+          [product.name]: true, // Set the current product's name as a key with value 'true' to mark it as added
         }));
       };
     const handleContinueShopping = (e) => {
@@ -302,7 +302,7 @@ function ProductList({ onHomeClick }) {
                                 <div className="product-cost">{plant.cost}</div> {/* Display plant cost */}
                                 <button
                                     className="product-button"
-                                    onClick={() => handleAddToCart(plant)} // Handle adding plant to cart
+                                    onClick={() => handleAddToCart(product)} // Handle adding plant to cart
                                 >
                                     Add to Cart
                                 </button>
