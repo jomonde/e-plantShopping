@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './ProductList.css'
+import './ProductList.css';
 import CartItem from './CartItem';
 import { addItem } from './CartSlice';
 
@@ -221,7 +221,7 @@ function ProductList({ onHomeClick }) {
         padding: '15px',
         display: 'flex',
         justifyContent: 'space-between',
-        alignIems: 'center',
+        alignItems: 'center',
         fontSize: '20px',
     }
     const styleObjUl = {
@@ -302,7 +302,7 @@ function ProductList({ onHomeClick }) {
                                 <div className="product-cost">{plant.cost}</div> {/* Display plant cost */}
                                 <button
                                     className="product-button"
-                                    onClick={() => handleAddToCart(product)} // Handle adding plant to cart
+                                    onClick={() => handleAddToCart(plant)} // Handle adding plant to cart
                                 >
                                     Add to Cart
                                 </button>
